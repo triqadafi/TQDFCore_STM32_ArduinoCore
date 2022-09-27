@@ -30,6 +30,9 @@
   #define  DEVICE_ID2                  (UID_BASE + 0x4U)
   #define  DEVICE_ID3                  (UID_BASE + 0x8U)
 
+
+  #define USB_MANUFACTURER_STRING "www.triqada.fi"
+  #define USB_PRODUCT_STRING "TRQDFCore Serial"
   /*
   * USB Billboard Class USER string desc Defines Template
   * index should start form 0x10 to avoid using the reserved device string desc indexes

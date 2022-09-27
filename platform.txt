@@ -4,8 +4,8 @@
 # For more info:
 # https://arduino.github.io/arduino-cli/latest/platform-specification/
 
-name=STM32 boards groups (Board to be selected from Tools submenu 'Board part number')
-version=2.3.0
+name=TRQDFCore_STM32_ArduinoCore
+version=1.0.0
 
 # STM compile variables
 # ----------------------
