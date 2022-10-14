@@ -31,13 +31,18 @@ GenF1.build.variant_h=variant_PILL_F103Cx.h
 GenF1.build.variant=STM32F1xx/F103C8T_F103CB(T-U)
 
 # Upload menu (HID Bootloader 2.2)
+#GenF1.menu.upload_method.hidMethod=TRQDFCore Bootloader
+#GenF1.menu.upload_method.hidMethod.upload.protocol=hid22
+#GenF1.menu.upload_method.hidMethod.upload.tool=hid_upload
+#GenF1.menu.upload_method.hidMethod.build.flash_offset=0x800
+#GenF1.menu.upload_method.hidMethod.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
 
-GenF1.menu.upload_method.hidMethod=TRQDFCore Bootloader
-GenF1.menu.upload_method.hidMethod.upload.protocol=hid22
-GenF1.menu.upload_method.hidMethod.upload.tool=hid_upload
-GenF1.menu.upload_method.hidMethod.build.flash_offset=0x800
-GenF1.menu.upload_method.hidMethod.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
-
+# Upload menu (TRQDF HID Bootloader)
+GenF1.menu.upload_method.TRQDFhidMethod=TRQDFCore Bootloader
+GenF1.menu.upload_method.TRQDFhidMethod.upload.protocol=hid
+GenF1.menu.upload_method.TRQDFhidMethod.upload.tool=trqdf_hid_upload
+GenF1.menu.upload_method.TRQDFhidMethod.build.flash_offset=0x1000
+GenF1.menu.upload_method.TRQDFhidMethod.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
 
 
 ################################################################################
