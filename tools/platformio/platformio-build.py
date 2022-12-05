@@ -131,9 +131,10 @@ def configure_application_offset(mcu, upload_protocol):
 
     if upload_protocol == "hid":
         if mcu.startswith("stm32f1"):
-            offset = 0x800
+            # offset = 0x800
+            offset = 0x1000
         elif mcu.startswith("stm32f4"):
-            offset = 0x4000
+            offset = 0x8000
 
         env.Append(CPPDEFINES=["BL_HID"])
 
