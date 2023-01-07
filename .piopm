@@ -1,10 +1,10 @@
 {
   "type": "tool", 
-  "name": "framework-trqdfcore-stm32-arduinocore", 
+  "name": "framework-tqdfcore-stm32-arduinocore", 
   "version": "1.0.0", "spec": {
     "owner": "platformio", 
     "id": null, 
-    "name": "framework-trqdfcore-stm32-arduinocore", 
+    "name": "framework-tqdfcore-stm32-arduinocore", 
     "requirements": null, 
     "url": null
   }

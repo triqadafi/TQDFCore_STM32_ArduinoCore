@@ -10,7 +10,7 @@
  *
  *******************************************************************************
  */
-#if defined(ARDUINO_TRQDF_F401CC)
+#if defined(ARDUINO_TQDF_F401CC)
 
 #include "pins_arduino.h"
 

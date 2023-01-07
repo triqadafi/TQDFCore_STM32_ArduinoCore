@@ -1,6 +1,6 @@
 {
-  "name": "framework-trqdfcore-stm32-arduinocore",
+  "name": "framework-tqdfcore-stm32-arduinocore",
   "version": "1.0.0",
-  "description": "TRQDFCore is Arduino Wiring-based Framework for fiWATCH.",
-  "url": "https://github.com/triqadafi/TRQDFCore_STM32_Arduino_Core"
+  "description": "TQDFCore is Arduino Wiring-based Framework for fiWATCH.",
+  "url": "https://github.com/triqadafi/TQDFCore_STM32_Arduino_Core"
 }

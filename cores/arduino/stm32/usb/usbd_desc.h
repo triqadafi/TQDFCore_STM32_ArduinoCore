@@ -32,7 +32,7 @@
 
 
   #define USB_MANUFACTURER_STRING "www.triqada.fi"
-  #define USB_PRODUCT_STRING "TRQDFCore Serial"
+  #define USB_PRODUCT_STRING "TQDFCore Serial"
   /*
   * USB Billboard Class USER string desc Defines Template
   * index should start form 0x10 to avoid using the reserved device string desc indexes
