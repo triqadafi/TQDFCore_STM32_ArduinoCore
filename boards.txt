@@ -56,9 +56,9 @@ GenF1.menu.upload_method.serialMethod.upload.tool=stm32CubeProg
 
 
 ################################################################################
-# TRQDF mark 6
+# TQDF mark 6
 
-GenF4.name=TRQDF mark 6
+GenF4.name=TQDF mark 6
 
 GenF4.build.core=arduino
 GenF4.build.board=GenF4
@@ -76,6 +76,13 @@ GenF4.build.product_line=STM32F401xC
 GenF4.build.variant=STM32F4xx/F401CC(F-U-Y)_F401C(B-D-E)(U-Y)
 GenF4.build.variant_h=variant_{build.board}.h
 GenF4.build.peripheral_pins=-DCUSTOM_PERIPHERAL_PINS
+
+# Upload menu (TQDF HID Bootloader)
+GenF4.menu.upload_method.TQDFhidMethod=TQDFCore Bootloader
+GenF4.menu.upload_method.TQDFhidMethod.upload.protocol=hid
+GenF4.menu.upload_method.TQDFhidMethod.upload.tool=tqdf_hid_upload
+GenF4.menu.upload_method.TQDFhidMethod.build.flash_offset=0x8000
+GenF4.menu.upload_method.TQDFhidMethod.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
 
 # Upload menu
 GenF4.menu.upload_method.swdMethod=STM32CubeProgrammer (SWD)
