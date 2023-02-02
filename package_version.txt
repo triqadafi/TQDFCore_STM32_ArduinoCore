@@ -1,4 +1,0 @@
-commit 92ebaf5c970b6414e2f28996414749e0bd1a21be
-Author: Frederic Pillon <frederic.pillon@st.com>
-
-    chore: prepare release version 2.3.0
