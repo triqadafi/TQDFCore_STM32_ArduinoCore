@@ -1,0 +1,6 @@
+tqdfcore_usb.name=USB (TQDFCore Bootloader)
+tqdfcore_usb.communication=usb
+tqdfcore_usb.protocol=tqdfcore_usb
+tqdfcore_usb.program.protocol=tqdfcore_usb
+tqdfcore_usb.program.tool=tqdfcore_bootloader
+tqdfcore_usb.program.extra_params=-Pusb

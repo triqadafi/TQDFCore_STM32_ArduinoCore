@@ -159,16 +159,6 @@ recipe.size.regex.eeprom=^(?:\.eeprom)\s+([0-9]+).*
 # Uploader tool
 # -------------------
 
-# Upload to board via mass storage
-tools.massStorageCopy.cmd=massStorageCopy.sh
-tools.massStorageCopy.cmd.windows=massStorageCopy.bat
-tools.massStorageCopy.path={runtime.tools.STM32Tools.path}/win
-tools.massStorageCopy.path.macosx={runtime.tools.STM32Tools.path}/macosx
-tools.massStorageCopy.path.linux={runtime.tools.STM32Tools.path}/linux
-tools.massStorageCopy.upload.params.verbose=
-tools.massStorageCopy.upload.params.quiet=
-tools.massStorageCopy.upload.pattern="{path}/{cmd}" {upload.verbose} -I "{build.path}/{build.project_name}.bin" -O "{node}"
-
 # STM32CubeProgrammer upload
 tools.stm32CubeProg.path={runtime.tools.STM32Tools.path}
 tools.stm32CubeProg.busybox=
@@ -178,50 +168,22 @@ tools.stm32CubeProg.upload.params.verbose=
 tools.stm32CubeProg.upload.params.quiet=
 tools.stm32CubeProg.upload.pattern="{busybox}" sh "{path}/{cmd}" {upload.protocol} "{build.path}/{build.project_name}.bin" {upload.options}
 
-# blackmagic upload for generic STM32
-tools.bmp_upload.cmd=arm-none-eabi-gdb
-tools.bmp_upload.path={runtime.tools.xpack-arm-none-eabi-gcc.path}/bin
-tools.bmp_upload.upload.speed=230400
-tools.bmp_upload.upload.params.verbose=-batch
-tools.bmp_upload.upload.params.quiet=--batch-silent
-tools.bmp_upload.upload.pattern="{path}/{cmd}" -nx -b {upload.speed} {upload.verbose} -ex "set confirm off" -ex "target extended-remote {serial.port}" -ex "monitor swdp_scan" -ex "attach 1" -ex "load" -ex "compare-sections" -ex "kill" "{build.path}/{build.project_name}.elf"
-tools.bmp_upload.upload.pattern.windows="{path}/{cmd}" -nx -b {upload.speed} {upload.verbose} -ex "set confirm off" -ex "target extended-remote \\.\{serial.port}" -ex "monitor swdp_scan" -ex "attach 1" -ex "load" -ex "compare-sections" -ex "kill" "{build.path}/{build.project_name}.elf"
+# TQDFCore Upload (Arduino-like Serial) 
+tools.tqdfcore_upload.cmd=tqdf-flash
+tools.tqdfcore_upload.cmd.windows=tqdf-flash.exe
+tools.tqdfcore_upload.path={runtime.tools.TQDFTools.path}/win
+tools.tqdfcore_upload.path.macosx={runtime.tools.TQDFTools.path}/macosx
+tools.tqdfcore_upload.path.linux={runtime.tools.TQDFTools.path}/linux
+tools.tqdfcore_upload.upload.params.verbose=-d
+tools.tqdfcore_upload.upload.params.quiet=n
+tools.tqdfcore_upload.upload.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" -p={serial.port.file} -ide
 
-# HID flash 2.2 (HID bootloader v2.2 for STM32F1 and STM32F4 series)
-tools.hid_upload.cmd=hid-flash
-tools.hid_upload.cmd.windows=hid-flash.exe
-tools.hid_upload.path={runtime.tools.STM32Tools.path}/win
-tools.hid_upload.path.macosx={runtime.tools.STM32Tools.path}/macosx
-tools.hid_upload.path.linux={runtime.tools.STM32Tools.path}/linux
-tools.hid_upload.upload.params.verbose=-d
-tools.hid_upload.upload.params.quiet=n
-tools.hid_upload.upload.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" {serial.port.file}
-
-# Upload using Maple bootloader over DFU
-tools.maple_upload.cmd=maple_upload.sh
-tools.maple_upload.cmd.windows=maple_upload.bat
-tools.maple_upload.path={runtime.tools.STM32Tools.path}/win
-tools.maple_upload.path.macosx={runtime.tools.STM32Tools.path}/macosx
-tools.maple_upload.path.linux={runtime.tools.STM32Tools.path}/linux
-tools.maple_upload.upload.params.verbose=-d
-tools.maple_upload.upload.params.quiet=n
-tools.maple_upload.upload.pattern="{path}/{cmd}" {serial.port.file} {upload.altID} {upload.usbID} "{build.path}/{build.project_name}.bin"
-
-# STM32MP1 self-contained shell script
-tools.remoteproc_gen.path={runtime.tools.STM32Tools.path}
-tools.remoteproc_gen.busybox=
-tools.remoteproc_gen.busybox.windows={path}/win/busybox.exe
-tools.remoteproc_gen.script=run_arduino_gen.sh
-tools.remoteproc_gen.upload.params.verbose=
-tools.remoteproc_gen.upload.params.quiet=
-tools.remoteproc_gen.upload.pattern="{busybox}" sh "{path}/{script}" generate "{build.path}/{build.project_name}.elf" "{build.path}/run_arduino_{build.project_name}.sh"
-
-# TQDF HID flash 
-tools.tqdf_hid_upload.cmd=tqdf-hid-flash
-tools.tqdf_hid_upload.cmd.windows=tqdf-hid-flash.exe
-tools.tqdf_hid_upload.path={runtime.tools.TQDFTools.path}/win
-tools.tqdf_hid_upload.path.macosx={runtime.tools.TQDFTools.path}/macosx
-tools.tqdf_hid_upload.path.linux={runtime.tools.TQDFTools.path}/linux
-tools.tqdf_hid_upload.upload.params.verbose=-d
-tools.tqdf_hid_upload.upload.params.quiet=n
-tools.tqdf_hid_upload.upload.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" -p={serial.port.file} -ide
+# TQDFCore HID Bootloader
+tools.tqdfcore_bootloader.path={runtime.tools.TQDFTools.path}/win
+tools.tqdfcore_bootloader.cmd.windows=tqdf-flash.exe
+tools.tqdfcore_bootloader.upload.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" -p={serial.port.file} -ide
+tools.tqdfcore_bootloader.program.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" -ide
+tools.tqdfcore_bootloader.erase.pattern="{path}/{cmd}" -exit
+tools.tqdfcore_bootloader.bootloader.params.verbose=-v
+tools.tqdfcore_bootloader.bootloader.params.quiet=-q -q
+tools.tqdfcore_bootloader.bootloader.pattern="{path}/{cmd}" "{runtime.platform.path}/{bootloader.file}" -ide
