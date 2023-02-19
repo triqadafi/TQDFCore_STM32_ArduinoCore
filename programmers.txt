@@ -4,3 +4,6 @@ tqdfcore_usb.protocol=tqdfcore_usb
 tqdfcore_usb.program.protocol=tqdfcore_usb
 tqdfcore_usb.program.tool=tqdfcore_bootloader
 tqdfcore_usb.program.extra_params=-Pusb
+
+# clean this location %APPDATA%\arduino-ide\
+

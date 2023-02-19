@@ -78,7 +78,7 @@ GenF4.build.variant_h=variant_{build.board}.h
 GenF4.build.peripheral_pins=-DCUSTOM_PERIPHERAL_PINS
 
 GenF4.bootloader.tool=tqdfcore_bootloader
-GenF4.bootloader.file=bootloaders/{build.series}/{build.series}_tqdfcore_bootloader_enable_usb_cdc.bin
+GenF4.bootloader.file={build.series}/{build.series}_tqdfcore_bootloader_enable_usb_cdc.bin
 
 # Upload menu (TQDF HID Bootloader)
 GenF4.menu.upload_method.TQDFhidMethod=TQDFCore Bootloader
