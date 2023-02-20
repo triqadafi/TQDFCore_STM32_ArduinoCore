@@ -10,7 +10,7 @@
         {
           "name": "TQDFCore_STM32_ArduinoCore",
           "architecture": "stm32",
-          "version": "1.1.2",
+          "version": "1.1.4",
           "deprecated": false,
           "category": "Contributed",
           "url": "https://github.com/triqadafi/TQDFCore_STM32_ArduinoCore/releases/download/v1.1.2-release/TQDFCore_STM32_ArduinoCore-1.1.2-release.zip",
@@ -40,7 +40,7 @@
             {
               "packager": "TQDFCore",
               "name": "TQDFTools",
-              "version": "1.1.0"
+              "version": "1.1.1"
             },
             {
               "packager": "TQDFCore",
@@ -53,6 +53,19 @@
         }
       ],
       "tools": [
+        {
+          "name": "TQDFTools",
+          "version": "1.1.1",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "https://github.com/triqadafi/TQDFCore_Tools/releases/download/v1.1.1-release/TQDFCore_Tools-1.1.1-release-windows.zip",
+              "archiveFileName": "TQDFCore_Tools-1.1.1-release-windows.zip",
+              "size": "458963",
+              "checksum": "SHA-256:68295952dd74fd0183af27d1c2b584b885a00ab4d5216b72e92e8cfbab07510f"
+            }
+          ]
+        },
         {
           "name": "CMSIS",
           "version": "5.7.0",
@@ -134,24 +147,6 @@
               "checksum": "SHA-256:35ecc3914e8a0a45de229111cc45b8cb39a8e0a8c66313562fd51977a7ab3dee"
             }
           ]
-        },
-        {
-          "name": "TQDFTools",
-          "version": "1.1.0",
-          "systems": [
-            {
-              "host": "i686-mingw32",
-              "url": "https://github.com/triqadafi/TQDFCore_Tools/releases/download/v1.1.1-release/TQDFCore_Tools-1.1.1-release-windows.zip",
-              "archiveFileName": "TQDFCore_Tools-1.1.1-release-windows.zip",
-              "size": "458963",
-              "checksum": "SHA-256:68295952dd74fd0183af27d1c2b584b885a00ab4d5216b72e92e8cfbab07510f"
-            }
-          ]
-        },
-        {
-          "name": "TQDFTools",
-          "version": "1.2.0",
-          "systems": []
         },
         {
           "name": "xpack-arm-none-eabi-gcc",
