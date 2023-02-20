@@ -16,7 +16,7 @@
  * STM32F401CCFx.xml
  * CubeMX DB release 6.0.20
  */
-#if defined(ARDUINO_TQDF_WATCH_MK6)
+#if defined(ARDUINO_WATCH_AEONF_MK6)
 #include "Arduino.h"
 #include "PeripheralPins.h"
 

@@ -10,7 +10,7 @@
  *
  *******************************************************************************
  */
-#if defined(ARDUINO_TQDF_WATCH_MK6)
+#if defined(ARDUINO_WATCH_AEONF_MK6)
 
 #include "pins_arduino.h"
 
