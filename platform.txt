@@ -170,7 +170,7 @@ tools.stm32CubeProg.upload.pattern="{busybox}" sh "{path}/{cmd}" {upload.protoco
 
 # TQDFCore Upload (Arduino-like Serial) 
 tools.tqdfcore_upload.cmd=tqdf-flash
-tools.tqdfcore_upload.cmd.windows=tqdf-flash.exe
+tools.tqdfcore_upload.cmd.windows=tqdf-tools-stm32.exe
 tools.tqdfcore_upload.path={runtime.tools.TQDFTools.path}/win
 tools.tqdfcore_upload.path.macosx={runtime.tools.TQDFTools.path}/macosx
 tools.tqdfcore_upload.path.linux={runtime.tools.TQDFTools.path}/linux
