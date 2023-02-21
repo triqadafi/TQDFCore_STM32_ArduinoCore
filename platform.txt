@@ -180,9 +180,11 @@ tools.tqdfcore_upload.upload.pattern="{path}/{cmd}" "{build.path}/{build.project
 
 # TQDFCore HID Bootloader
 tools.tqdfcore_bootloader.path={runtime.tools.TQDFTools.path}/win
-tools.tqdfcore_bootloader.cmd.windows=tqdf-flash.exe
+tools.tqdfcore_bootloader.cmd.windows=tqdf-tools-stm32.exe
 tools.tqdfcore_bootloader.upload.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" -p={serial.port.file} -ide
+tools.tqdfcore_bootloader.program.params.verbose=-v
 tools.tqdfcore_bootloader.program.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" -ide
+tools.tqdfcore_bootloader.erase.params.verbose=-v
 tools.tqdfcore_bootloader.erase.pattern="{path}/{cmd}" -exit
 tools.tqdfcore_bootloader.bootloader.params.verbose=-v
 tools.tqdfcore_bootloader.bootloader.params.quiet=-q -q
