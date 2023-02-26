@@ -170,3 +170,47 @@
     #define SERIAL_PORT_HARDWARE  Serial
   #endif
 #endif
+
+/*----------------------------------------------------------------------------
+ * AEONF_MK6 pin mapping
+ *----------------------------------------------------------------------------*/
+
+#define TQDF_WATCH_AEONF_MK6
+
+#define PLED1 PB9
+#define PLED2 PB6
+#define PLED3 PB5
+#define PLED4 PB4
+#define PLED5 PB3
+#define PLED6 PB12
+#define PLED7 PB10
+#define PLED8 PA7
+#define PLED9 PA6
+#define PLED10 PA5
+#define PLED11 PA4
+#define PLED12 PC13
+
+#define PBUTTON PA0
+#define PBEEPER PA15
+#define PLED_POWER PB7
+
+
+#define PUNUSED1 PA15 // USE for calibration only
+#define PUNUSED2 PA1
+#define PUNUSED3 PA2
+#define PUNUSED4 PA3
+#define PUNUSED5 PA8
+#define PUNUSED6 PB0
+#define PUNUSED7 PB1
+#define PUNUSED8 PB8
+#define PUNUSED9 PB8
+#define PUNUSED10 PB13
+#define PUNUSED11 PB14
+#define PUNUSED12 PB15
+
+#define PSPECIAL1 PBUTTON // Button
+#define PSPECIAL2 PLED_POWER // LED SWITCH !! Ssame as PIN_LED_POWER
+#define PSPECIAL3 PA9 // SERIAL TX
+#define PSPECIAL4 PA10 // SERIAL RX
+#define PSPECIAL5 PA11 // USB D+
+#define PSPECIAL6 PA12 // USB D+
