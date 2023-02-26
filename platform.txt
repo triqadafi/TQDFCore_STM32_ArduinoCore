@@ -158,34 +158,51 @@ recipe.size.regex.eeprom=^(?:\.eeprom)\s+([0-9]+).*
 
 # Uploader tool
 # -------------------
-
 # STM32CubeProgrammer upload
 tools.stm32CubeProg.path={runtime.tools.STM32Tools.path}
+tools.stm32CubeProg.cmd=stm32CubeProg.sh
 tools.stm32CubeProg.busybox=
 tools.stm32CubeProg.busybox.windows={path}/win/busybox.exe
-tools.stm32CubeProg.cmd=stm32CubeProg.sh
+
+# normal upload
 tools.stm32CubeProg.upload.params.verbose=
 tools.stm32CubeProg.upload.params.quiet=
 tools.stm32CubeProg.upload.pattern="{busybox}" sh "{path}/{cmd}" {upload.protocol} "{build.path}/{build.project_name}.bin" {upload.options}
+# upload using programmer
+tools.stm32CubeProg.program.params.verbose=
+tools.stm32CubeProg.program.params.quiet=
+tools.stm32CubeProg.program.pattern="{busybox}" sh "{path}/{cmd}" {program.protocol} "{build.path}/{build.project_name}.bin" {program.options}
+
+# burn boorloader
+tools.stm32CubeProg.erase.params.verbose=
+tools.stm32CubeProg.erase.params.quiet=
+tools.stm32CubeProg.erase.pattern=
+tools.stm32CubeProg.bootloader.params.verbose=
+tools.stm32CubeProg.bootloader.params.quiet=
+tools.stm32CubeProg.bootloader.pattern="{busybox}" sh "{path}/{cmd}" {bootloader.protocol} "{runtime.platform.path}/bootloaders/{bootloader.file}" {bootloader.options}
+
+
 
 # TQDFCore Upload (Arduino-like Serial) 
-tools.tqdfcore_upload.cmd=tqdf-flash
-tools.tqdfcore_upload.cmd.windows=tqdf-tools-stm32.exe
 tools.tqdfcore_upload.path={runtime.tools.TQDFTools.path}/win
 tools.tqdfcore_upload.path.macosx={runtime.tools.TQDFTools.path}/macosx
 tools.tqdfcore_upload.path.linux={runtime.tools.TQDFTools.path}/linux
+tools.tqdfcore_upload.cmd.windows=tqdf-tools-stm32.exe
+
+# normal upload
+tools.tqdfcore_upload.upload.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" -p={serial.port.file} -ide
 tools.tqdfcore_upload.upload.params.verbose=-d
 tools.tqdfcore_upload.upload.params.quiet=n
-tools.tqdfcore_upload.upload.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" -p={serial.port.file} -ide
 
-# TQDFCore HID Bootloader
-tools.tqdfcore_bootloader.path={runtime.tools.TQDFTools.path}/win
-tools.tqdfcore_bootloader.cmd.windows=tqdf-tools-stm32.exe
-tools.tqdfcore_bootloader.upload.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" -p={serial.port.file} -ide
-tools.tqdfcore_bootloader.program.params.verbose=-v
-tools.tqdfcore_bootloader.program.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" -ide
-tools.tqdfcore_bootloader.erase.params.verbose=-v
-tools.tqdfcore_bootloader.erase.pattern="{path}/{cmd}" -exit
-tools.tqdfcore_bootloader.bootloader.params.verbose=-v
-tools.tqdfcore_bootloader.bootloader.params.quiet=-q -q
-tools.tqdfcore_bootloader.bootloader.pattern="{path}/{cmd}" "{runtime.platform.path}/{bootloader.file}" -ide
+# upload using programmer
+tools.tqdfcore_upload.program.params.verbose=
+tools.tqdfcore_upload.program.params.quiet=
+tools.tqdfcore_upload.program.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" -ide
+
+# burn boorloader
+tools.tqdfcore_upload.erase.params.verbose=
+tools.tqdfcore_upload.erase.params.quiet=
+tools.tqdfcore_upload.erase.pattern=
+tools.tqdfcore_upload.bootloader.params.verbose=
+tools.tqdfcore_upload.bootloader.params.quiet=
+tools.tqdfcore_upload.bootloader.pattern="{path}/{cmd}" "{runtime.platform.path}/bootloaders/{bootloader.file}" -ide
