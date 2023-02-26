@@ -81,6 +81,7 @@ GenF4.build.peripheral_pins=-DCUSTOM_PERIPHERAL_PINS
 
 # GenF4.bootloader.tool=tqdfcore_bootloader
 GenF4.bootloader.file={build.series}/watch_{build.series}_tqdfcore_bootloader_enable_usb_cdc.bin
+GenF4.bootloader.file_nooffset={build.series}/watch_{build.series}_tqdfcore_bootloader_enable_usb_cdc_nooffset.bin
 
 # Upload menu (TQDF Bootloader)
 GenF4.menu.aupload_method.TQDFMethodUSB=TQDFCore Bootloader (USB)
