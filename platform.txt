@@ -168,6 +168,7 @@ tools.stm32CubeProg.busybox.windows={path}/win/busybox.exe
 tools.stm32CubeProg.upload.params.verbose=
 tools.stm32CubeProg.upload.params.quiet=
 tools.stm32CubeProg.upload.pattern="{busybox}" sh "{path}/{cmd}" {upload.protocol} "{build.path}/{build.project_name}.bin" {upload.options}
+
 # upload using programmer
 tools.stm32CubeProg.program.params.verbose=
 tools.stm32CubeProg.program.params.quiet=
@@ -206,3 +207,27 @@ tools.tqdfcore_upload.erase.pattern=
 tools.tqdfcore_upload.bootloader.params.verbose=
 tools.tqdfcore_upload.bootloader.params.quiet=
 tools.tqdfcore_upload.bootloader.pattern="{path}/{cmd}" "{runtime.platform.path}/bootloaders/{bootloader.file}" -ide
+
+# STM32CubeProgrammer upload
+tools.tqdfcore_stlink.path={runtime.tools.TQDFTools.path}
+tools.tqdfcore_stlink.cmd=stm32CubeProg.sh
+tools.tqdfcore_stlink.busybox=
+tools.tqdfcore_stlink.busybox.windows={path}/win/busybox.exe
+
+# normal upload
+tools.tqdfcore_stlink.upload.params.verbose=
+tools.tqdfcore_stlink.upload.params.quiet=
+tools.tqdfcore_stlink.upload.pattern="{busybox}" sh "{path}/{cmd}" {upload.protocol} "{build.path}/{build.project_name}.bin" {build.flash_offset} {upload.options}
+
+# upload using programmer
+tools.tqdfcore_stlink.program.params.verbose=
+tools.tqdfcore_stlink.program.params.quiet=
+tools.tqdfcore_stlink.program.pattern="{busybox}" sh "{path}/{cmd}" {program.protocol} "{build.path}/{build.project_name}.bin" {build.flash_offset} {program.options}
+
+# burn boorloader
+tools.tqdfcore_stlink.erase.params.verbose=
+tools.tqdfcore_stlink.erase.params.quiet=
+tools.tqdfcore_stlink.erase.pattern=
+tools.tqdfcore_stlink.bootloader.params.verbose=
+tools.tqdfcore_stlink.bootloader.params.quiet=
+tools.tqdfcore_stlink.bootloader.pattern="{busybox}" sh "{path}/{cmd}" {bootloader.protocol} "{runtime.platform.path}/bootloaders/{bootloader.file}" {bootloader.options}

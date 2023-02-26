@@ -73,7 +73,7 @@ GenF4.build.cmsis_lib_gcc=arm_cortexM4lf_math
 
 GenF4.upload.maximum_size=262144
 GenF4.upload.maximum_data_size=65536
-GenF4.build.board=BLACKPILL_F401CC
+GenF4.build.board=WATCH_AEONF_MK6
 GenF4.build.product_line=STM32F401xC
 GenF4.build.variant=STM32F4xx/F401CC(F-U-Y)_F401C(B-D-E)(U-Y)
 GenF4.build.variant_h=variant_{build.board}.h
@@ -83,13 +83,35 @@ GenF4.build.peripheral_pins=-DCUSTOM_PERIPHERAL_PINS
 GenF4.bootloader.file={build.series}/watch_{build.series}_tqdfcore_bootloader_enable_usb_cdc.bin
 
 # Upload menu (TQDF Bootloader)
-GenF4.menu.aupload_method.TQDFMethod=TQDFCore Bootloader (USB)
-GenF4.menu.aupload_method.TQDFMethod.build.flash_offset=0x8000
-GenF4.menu.aupload_method.TQDFMethod.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
-GenF4.menu.aupload_method.TQDFMethod.upload.tool=tqdfcore_upload
-GenF4.menu.aupload_method.TQDFMethod.program.tool=tqdfcore_upload
-GenF4.menu.aupload_method.TQDFMethod.erase.tool=tqdfcore_upload
-GenF4.menu.aupload_method.TQDFMethod.bootloader.tool=tqdfcore_upload
+GenF4.menu.aupload_method.TQDFMethodUSB=TQDFCore Bootloader (USB)
+GenF4.menu.aupload_method.TQDFMethodUSB.build.flash_offset=0x8000
+GenF4.menu.aupload_method.TQDFMethodUSB.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
+GenF4.menu.aupload_method.TQDFMethodUSB.upload.protocol=hid
+GenF4.menu.aupload_method.TQDFMethodUSB.upload.tool=tqdfcore_upload
+GenF4.menu.aupload_method.TQDFMethodUSB.program.tool=tqdfcore_upload
+GenF4.menu.aupload_method.TQDFMethodUSB.erase.tool=tqdfcore_upload
+GenF4.menu.aupload_method.TQDFMethodUSB.bootloader.tool=tqdfcore_upload
+
+# Upload menu (TQDF Bootloader)
+GenF4.menu.aupload_method.TQDFMethodSTLink=TQDFCore Bootloader (SWD + Offset)
+GenF4.menu.aupload_method.TQDFMethodSTLink.build.flash_offset=0x8000
+GenF4.menu.aupload_method.TQDFMethodSTLink.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
+
+GenF4.menu.aupload_method.TQDFMethodSTLink.upload.protocol=0
+GenF4.menu.aupload_method.TQDFMethodSTLink.upload.options=-g
+GenF4.menu.aupload_method.TQDFMethodSTLink.upload.tool=tqdfcore_stlink
+
+GenF4.menu.aupload_method.TQDFMethodSTLink.program.protocol=0
+GenF4.menu.aupload_method.TQDFMethodSTLink.program.options=-g
+GenF4.menu.aupload_method.TQDFMethodSTLink.program.tool=tqdfcore_stlink
+
+GenF4.menu.aupload_method.TQDFMethodSTLink.erase.protocol=0
+GenF4.menu.aupload_method.TQDFMethodSTLink.erase.options=-g
+GenF4.menu.aupload_method.TQDFMethodSTLink.erase.tool=tqdfcore_stlink
+
+GenF4.menu.aupload_method.TQDFMethodSTLink.bootloader.protocol=0
+GenF4.menu.aupload_method.TQDFMethodSTLink.bootloader.options=-g
+GenF4.menu.aupload_method.TQDFMethodSTLink.bootloader.tool=tqdfcore_stlink
 
 # Upload menu
 GenF4.menu.aupload_method.swdMethod=STM32CubeProgrammer (SWD)
