@@ -32,3 +32,5 @@ __pycache__/
 # VisualStudioCode
 .vscode/*
 *.code-workspace
+
+installed.json
