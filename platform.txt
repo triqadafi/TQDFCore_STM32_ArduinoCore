@@ -5,7 +5,7 @@
 # https://arduino.github.io/arduino-cli/latest/platform-specification/
 
 name=TQDFCore_STM32_ArduinoCore
-version=1.1.5
+version=1.1.6
 
 # STM compile variables
 # ----------------------
@@ -117,7 +117,7 @@ extras.path={build.system.path}/extras
 
 # Create {build.opt} if not exists in the output sketch dir and force include of SrcWrapper library
 recipe.hooks.prebuild.1.pattern="{extras.path}/prebuild.sh" "{build.path}" "{build.source.path}" "{runtime.platform.path}"
-recipe.hooks.prebuild.1.pattern.windows="{runtime.tools.STM32Tools.path}/win/busybox.exe" sh "{extras.path}/prebuild.sh" "{build.path}" "{build.source.path}" "{runtime.platform.path}"
+recipe.hooks.prebuild.1.pattern.windows="{runtime.tools.STM32Tools.path}/windows/busybox.exe" sh "{extras.path}/prebuild.sh" "{build.path}" "{build.source.path}" "{runtime.platform.path}"
 
 # compile patterns
 # ---------------------
@@ -162,7 +162,7 @@ recipe.size.regex.eeprom=^(?:\.eeprom)\s+([0-9]+).*
 tools.stm32CubeProg.path={runtime.tools.STM32Tools.path}
 tools.stm32CubeProg.cmd=stm32CubeProg.sh
 tools.stm32CubeProg.busybox=
-tools.stm32CubeProg.busybox.windows={path}/win/busybox.exe
+tools.stm32CubeProg.busybox.windows={path}/windows/busybox.exe
 
 # normal upload
 tools.stm32CubeProg.upload.params.verbose=
@@ -184,11 +184,18 @@ tools.stm32CubeProg.bootloader.pattern="{busybox}" sh "{path}/{cmd}" {bootloader
 
 
 
+
+
+
+
 # TQDFCore Upload (Arduino-like Serial) 
-tools.tqdfcore_upload.path={runtime.tools.TQDFTools.path}/win
+tools.tqdfcore_upload.path={runtime.tools.TQDFTools.path}/windows
 tools.tqdfcore_upload.path.macosx={runtime.tools.TQDFTools.path}/macosx
 tools.tqdfcore_upload.path.linux={runtime.tools.TQDFTools.path}/linux
+
+tools.tqdfcore_upload.cmd=tqdf-tools-stm32
 tools.tqdfcore_upload.cmd.windows=tqdf-tools-stm32.exe
+tools.tqdfcore_upload.cmd.macosx=tqdf-tools-stm32
 
 # normal upload
 tools.tqdfcore_upload.upload.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" -p={serial.port.file} -ide
@@ -208,11 +215,16 @@ tools.tqdfcore_upload.bootloader.params.verbose=
 tools.tqdfcore_upload.bootloader.params.quiet=
 tools.tqdfcore_upload.bootloader.pattern="{path}/{cmd}" "{runtime.platform.path}/bootloaders/{bootloader.file_offset}" -ide
 
+
+
+
+
+
 # STM32CubeProgrammer upload
 tools.tqdfcore_stlink.path={runtime.tools.TQDFTools.path}
 tools.tqdfcore_stlink.cmd=stm32CubeProg.sh
 tools.tqdfcore_stlink.busybox=
-tools.tqdfcore_stlink.busybox.windows={path}/win/busybox.exe
+tools.tqdfcore_stlink.busybox.windows={path}/windows/busybox.exe
 
 # normal upload
 tools.tqdfcore_stlink.upload.params.verbose=
