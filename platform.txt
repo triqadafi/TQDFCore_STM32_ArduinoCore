@@ -117,7 +117,7 @@ extras.path={build.system.path}/extras
 
 # Create {build.opt} if not exists in the output sketch dir and force include of SrcWrapper library
 recipe.hooks.prebuild.1.pattern="{extras.path}/prebuild.sh" "{build.path}" "{build.source.path}" "{runtime.platform.path}"
-recipe.hooks.prebuild.1.pattern.windows="{runtime.tools.STM32Tools.path}/windows/busybox.exe" sh "{extras.path}/prebuild.sh" "{build.path}" "{build.source.path}" "{runtime.platform.path}"
+recipe.hooks.prebuild.1.pattern.windows="{runtime.tools.STM32Tools.path}/win/busybox.exe" sh "{extras.path}/prebuild.sh" "{build.path}" "{build.source.path}" "{runtime.platform.path}"
 
 # compile patterns
 # ---------------------
@@ -162,7 +162,7 @@ recipe.size.regex.eeprom=^(?:\.eeprom)\s+([0-9]+).*
 tools.stm32CubeProg.path={runtime.tools.STM32Tools.path}
 tools.stm32CubeProg.cmd=stm32CubeProg.sh
 tools.stm32CubeProg.busybox=
-tools.stm32CubeProg.busybox.windows={path}/windows/busybox.exe
+tools.stm32CubeProg.busybox.windows={path}/win/busybox.exe
 
 # normal upload
 tools.stm32CubeProg.upload.params.verbose=
