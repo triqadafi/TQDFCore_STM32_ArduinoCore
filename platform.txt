@@ -242,4 +242,4 @@ tools.tqdfcore_stlink.erase.params.quiet=
 tools.tqdfcore_stlink.erase.pattern=
 tools.tqdfcore_stlink.bootloader.params.verbose=
 tools.tqdfcore_stlink.bootloader.params.quiet=
-tools.tqdfcore_stlink.bootloader.pattern="{busybox}" sh "{path}/{cmd}" {bootloader.protocol} "{runtime.platform.path}/bootloaders/{bootloader.file}" 0x0 {bootloader.options}
+tools.tqdfcore_stlink.bootloader.pattern="{busybox}" sh "{path}/{cmd}" {bootloader.protocol} "{runtime.platform.path}/bootloaders/{bootloader.file_offset}" {build.flash_offset} {bootloader.options}
