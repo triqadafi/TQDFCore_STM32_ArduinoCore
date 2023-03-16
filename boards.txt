@@ -3,6 +3,7 @@
 # menu.pnum=Board part number
 
 menu.aupload_method=Upload method
+menu.bbootsector=Boot Sector
 menu.bdiwyor=------- [WARNING!] -------
 menu.cusb=UART Output
 menu.dopt=Optimize
@@ -84,7 +85,7 @@ GenF4.bootloader.file={build.series}/watch_{build.series}_tqdfcore_bootloader_en
 GenF4.bootloader.file_offset={build.series}/watch_{build.series}_tqdfcore_bootloader_enable_usb_cdc_offset.bin
 
 # Upload menu (TQDF Bootloader)
-GenF4.menu.aupload_method.TQDFMethodUSB=TQDFCore Bootloader (USB)
+GenF4.menu.aupload_method.TQDFMethodUSB=TQDFCore Bootloader (USB) [default]
 GenF4.menu.aupload_method.TQDFMethodUSB.build.flash_offset=0x8000
 GenF4.menu.aupload_method.TQDFMethodUSB.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
 GenF4.menu.aupload_method.TQDFMethodUSB.upload.protocol=hid
@@ -166,6 +167,20 @@ GenF4.menu.aupload_method.dfuMethod.erase.tool=stm32CubeProg
 GenF4.menu.aupload_method.dfuMethod.bootloader.protocol=2
 GenF4.menu.aupload_method.dfuMethod.bootloader.options=-g
 GenF4.menu.aupload_method.dfuMethod.bootloader.tool=stm32CubeProg
+
+
+################################################################################
+# Boot Sector
+
+# Boot Sector menu (Main Watch Program)
+GenF4.menu.bbootsector.sectorA=Main (for watch program, default boot application)[default]
+GenF4.menu.bbootsector.sectorA.build.bootsector_offset=0x8000
+
+# Boot Sector menu (Sandbox)
+GenF4.menu.bbootsector.sectorB=Sandbox (for experiments, keep the main watch program alive)
+GenF4.menu.bbootsector.sectorB.build.bootsector_offset=0x20000
+
+
 
 ################################################################################
 # Serialx activation (Enabled (generic 'Serial'))
