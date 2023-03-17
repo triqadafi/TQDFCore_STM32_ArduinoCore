@@ -14,47 +14,47 @@ menu.ertlib=C Runtime Library
 
 # menu.dbg=Debug symbols and core logs
 
-################################################################################
-# Watch AEONF mk5
-GenF1.name=Watch AEONF mk5
+# ################################################################################
+# # Watch AEONF mk5
+# GenF1.name=Watch AEONF mk5
 
-GenF1.build.core=arduino
-GenF1.build.board=GenF1
-GenF1.build.mcu=cortex-m3
-GenF1.build.series=STM32F1xx
-GenF1.build.cmsis_lib_gcc=arm_cortexM3l_math
-GenF1.build.st_extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} {build.bootloader_flags}
+# GenF1.build.core=arduino
+# GenF1.build.board=GenF1
+# GenF1.build.mcu=cortex-m3
+# GenF1.build.series=STM32F1xx
+# GenF1.build.cmsis_lib_gcc=arm_cortexM3l_math
+# GenF1.build.st_extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} {build.bootloader_flags}
 
-GenF1.upload.maximum_size=131072
-GenF1.upload.maximum_data_size=20480
-GenF1.build.board=BLUEPILL_F103CB
-GenF1.build.product_line=STM32F103xB
-GenF1.build.variant_h=variant_PILL_F103Cx.h
-GenF1.build.variant=STM32F1xx/F103C8T_F103CB(T-U)
+# GenF1.upload.maximum_size=131072
+# GenF1.upload.maximum_data_size=20480
+# GenF1.build.board=BLUEPILL_F103CB
+# GenF1.build.product_line=STM32F103xB
+# GenF1.build.variant_h=variant_PILL_F103Cx.h
+# GenF1.build.variant=STM32F1xx/F103C8T_F103CB(T-U)
 
-# Upload menu (HID Bootloader 2.2)
-GenF1.menu.aupload_method.hidMethod=TQDFCore Bootloader
-GenF1.menu.aupload_method.hidMethod.upload.protocol=hid22
-GenF1.menu.aupload_method.hidMethod.upload.tool=hid_upload
-GenF1.menu.aupload_method.hidMethod.build.flash_offset=0x800
-GenF1.menu.aupload_method.hidMethod.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
+# # Upload menu (HID Bootloader 2.2)
+# GenF1.menu.aupload_method.hidMethod=TQDFCore Bootloader
+# GenF1.menu.aupload_method.hidMethod.upload.protocol=hid22
+# GenF1.menu.aupload_method.hidMethod.upload.tool=hid_upload
+# GenF1.menu.aupload_method.hidMethod.build.flash_offset=0x800
+# GenF1.menu.aupload_method.hidMethod.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
 
-# Upload menu (TQDF HID Bootloader)
-GenF1.menu.aupload_method.TQDFhidMethod=TQDFCore Bootloader
-GenF1.menu.aupload_method.TQDFhidMethod.upload.protocol=hid
-GenF1.menu.aupload_method.TQDFhidMethod.upload.tool=tqdfcore_upload
-GenF1.menu.aupload_method.TQDFhidMethod.build.flash_offset=0x1000
-GenF1.menu.aupload_method.TQDFhidMethod.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
+# # Upload menu (TQDF HID Bootloader)
+# GenF1.menu.aupload_method.TQDFhidMethod=TQDFCore Bootloader
+# GenF1.menu.aupload_method.TQDFhidMethod.upload.protocol=hid
+# GenF1.menu.aupload_method.TQDFhidMethod.upload.tool=tqdfcore_upload
+# GenF1.menu.aupload_method.TQDFhidMethod.build.flash_offset=0x1000
+# GenF1.menu.aupload_method.TQDFhidMethod.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
 
-GenF1.menu.aupload_method.swdMethod=STM32CubeProgrammer (SWD)
-GenF1.menu.aupload_method.swdMethod.upload.protocol=0
-GenF1.menu.aupload_method.swdMethod.upload.options=-g
-GenF1.menu.aupload_method.swdMethod.upload.tool=stm32CubeProg
+# GenF1.menu.aupload_method.swdMethod=STM32CubeProgrammer (SWD)
+# GenF1.menu.aupload_method.swdMethod.upload.protocol=0
+# GenF1.menu.aupload_method.swdMethod.upload.options=-g
+# GenF1.menu.aupload_method.swdMethod.upload.tool=stm32CubeProg
 
-GenF1.menu.aupload_method.serialMethod=STM32CubeProgrammer (Serial)
-GenF1.menu.aupload_method.serialMethod.upload.protocol=1
-GenF1.menu.aupload_method.serialMethod.upload.options={serial.port.file} -s
-GenF1.menu.aupload_method.serialMethod.upload.tool=stm32CubeProg
+# GenF1.menu.aupload_method.serialMethod=STM32CubeProgrammer (Serial)
+# GenF1.menu.aupload_method.serialMethod.upload.protocol=1
+# GenF1.menu.aupload_method.serialMethod.upload.options={serial.port.file} -s
+# GenF1.menu.aupload_method.serialMethod.upload.tool=stm32CubeProg
 
 
 ################################################################################
@@ -188,34 +188,34 @@ GenF4.menu.bdiwyor.none=Leave options below as [default]
 ################################################################################
 # Serialx activation (Enabled (generic 'Serial'))
 
-# USB connectivity (CDC (generic 'Serial' supersede U(S)ART))
-GenF1.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
+# # USB connectivity (CDC (generic 'Serial' supersede U(S)ART))
+# GenF1.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
 
 #GenF4.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
 GenF4.menu.cusb.CDCgen=USB [default]
 GenF4.menu.cusb.CDCgen.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
 GenF4.menu.cusb.none=UART1 [PA9/PA10 (TX/RX)]
 
-# Optimizations
-GenF1.menu.dopt.osstd=Smallest (-Os) [default]
-GenF1.menu.dopt.oslto=Smallest (-Os) with LTO
-GenF1.menu.dopt.oslto.build.flags.optimize=-Os -flto
-GenF1.menu.dopt.o1std=Fast (-O1)
-GenF1.menu.dopt.o1std.build.flags.optimize=-O1
-GenF1.menu.dopt.o1lto=Fast (-O1) with LTO
-GenF1.menu.dopt.o1lto.build.flags.optimize=-O1 -flto
-GenF1.menu.dopt.o2std=Faster (-O2)
-GenF1.menu.dopt.o2std.build.flags.optimize=-O2
-GenF1.menu.dopt.o2lto=Faster (-O2) with LTO
-GenF1.menu.dopt.o2lto.build.flags.optimize=-O2 -flto
-GenF1.menu.dopt.o3std=Fastest (-O3)
-GenF1.menu.dopt.o3std.build.flags.optimize=-O3
-GenF1.menu.dopt.o3lto=Fastest (-O3) with LTO
-GenF1.menu.dopt.o3lto.build.flags.optimize=-O3 -flto
-GenF1.menu.dopt.ogstd=Debug (-Og)
-GenF1.menu.dopt.ogstd.build.flags.optimize=-Og
-GenF1.menu.dopt.o0std=No Optimization (-O0)
-GenF1.menu.dopt.o0std.build.flags.optimize=-O0
+# # Optimizations
+# GenF1.menu.dopt.osstd=Smallest (-Os) [default]
+# GenF1.menu.dopt.oslto=Smallest (-Os) with LTO
+# GenF1.menu.dopt.oslto.build.flags.optimize=-Os -flto
+# GenF1.menu.dopt.o1std=Fast (-O1)
+# GenF1.menu.dopt.o1std.build.flags.optimize=-O1
+# GenF1.menu.dopt.o1lto=Fast (-O1) with LTO
+# GenF1.menu.dopt.o1lto.build.flags.optimize=-O1 -flto
+# GenF1.menu.dopt.o2std=Faster (-O2)
+# GenF1.menu.dopt.o2std.build.flags.optimize=-O2
+# GenF1.menu.dopt.o2lto=Faster (-O2) with LTO
+# GenF1.menu.dopt.o2lto.build.flags.optimize=-O2 -flto
+# GenF1.menu.dopt.o3std=Fastest (-O3)
+# GenF1.menu.dopt.o3std.build.flags.optimize=-O3
+# GenF1.menu.dopt.o3lto=Fastest (-O3) with LTO
+# GenF1.menu.dopt.o3lto.build.flags.optimize=-O3 -flto
+# GenF1.menu.dopt.ogstd=Debug (-Og)
+# GenF1.menu.dopt.ogstd.build.flags.optimize=-Og
+# GenF1.menu.dopt.o0std=No Optimization (-O0)
+# GenF1.menu.dopt.o0std.build.flags.optimize=-O0
 
 GenF4.menu.dopt.osstd=Smallest (-Os) [default]
 GenF4.menu.dopt.oslto=Smallest (-Os) with LTO
@@ -239,16 +239,16 @@ GenF4.menu.dopt.o0std.build.flags.optimize=-O0
 
 # Debug information (None)
 
-# C Runtime Library
-GenF1.menu.ertlib.nano=Newlib Nano [default]
-GenF1.menu.ertlib.nanofp=Newlib Nano + Float Printf
-GenF1.menu.ertlib.nanofp.build.flags.ldspecs=--specs=nano.specs -u _printf_float
-GenF1.menu.ertlib.nanofs=Newlib Nano + Float Scanf
-GenF1.menu.ertlib.nanofs.build.flags.ldspecs=--specs=nano.specs -u _scanf_float
-GenF1.menu.ertlib.nanofps=Newlib Nano + Float Printf/Scanf
-GenF1.menu.ertlib.nanofps.build.flags.ldspecs=--specs=nano.specs -u _printf_float -u _scanf_float
-GenF1.menu.ertlib.full=Newlib Standard
-GenF1.menu.ertlib.full.build.flags.ldspecs=
+# # C Runtime Library
+# GenF1.menu.ertlib.nano=Newlib Nano [default]
+# GenF1.menu.ertlib.nanofp=Newlib Nano + Float Printf
+# GenF1.menu.ertlib.nanofp.build.flags.ldspecs=--specs=nano.specs -u _printf_float
+# GenF1.menu.ertlib.nanofs=Newlib Nano + Float Scanf
+# GenF1.menu.ertlib.nanofs.build.flags.ldspecs=--specs=nano.specs -u _scanf_float
+# GenF1.menu.ertlib.nanofps=Newlib Nano + Float Printf/Scanf
+# GenF1.menu.ertlib.nanofps.build.flags.ldspecs=--specs=nano.specs -u _printf_float -u _scanf_float
+# GenF1.menu.ertlib.full=Newlib Standard
+# GenF1.menu.ertlib.full.build.flags.ldspecs=
 
 GenF4.menu.ertlib.nano=Newlib Nano [default]
 GenF4.menu.ertlib.nanofp=Newlib Nano + Float Printf
