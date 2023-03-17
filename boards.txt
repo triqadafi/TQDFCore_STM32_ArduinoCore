@@ -3,7 +3,6 @@
 # menu.pnum=Board part number
 
 menu.aupload_method=Upload method
-menu.bbootsector=Boot Sector
 menu.bdiwyor=------- [WARNING!] -------
 menu.cusb=UART Output
 menu.dopt=Optimize
@@ -85,18 +84,29 @@ GenF4.bootloader.file={build.series}/watch_{build.series}_tqdfcore_bootloader_en
 GenF4.bootloader.file_offset={build.series}/watch_{build.series}_tqdfcore_bootloader_enable_usb_cdc_offset.bin
 
 # Upload menu (TQDF Bootloader)
-GenF4.menu.aupload_method.TQDFMethodUSB=TQDFCore Bootloader (USB) [default]
-GenF4.menu.aupload_method.TQDFMethodUSB.build.flash_offset=0x8000
-GenF4.menu.aupload_method.TQDFMethodUSB.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
-GenF4.menu.aupload_method.TQDFMethodUSB.upload.protocol=hid
-GenF4.menu.aupload_method.TQDFMethodUSB.upload.tool=tqdfcore_upload
-GenF4.menu.aupload_method.TQDFMethodUSB.program.tool=tqdfcore_upload
-GenF4.menu.aupload_method.TQDFMethodUSB.erase.tool=tqdfcore_upload
-GenF4.menu.aupload_method.TQDFMethodUSB.bootloader.tool=tqdfcore_upload
+GenF4.menu.aupload_method.TQDFMethodUSBSectorA=TQDFCore Bootloader (USB > Main Program) [default]
+GenF4.menu.aupload_method.TQDFMethodUSBSectorA.build.flash_offset=0x8000
+GenF4.menu.aupload_method.TQDFMethodUSBSectorB.build.tqdftools_flag=
+GenF4.menu.aupload_method.TQDFMethodUSBSectorA.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
+GenF4.menu.aupload_method.TQDFMethodUSBSectorA.upload.protocol=hid
+GenF4.menu.aupload_method.TQDFMethodUSBSectorA.upload.tool=tqdfcore_upload
+GenF4.menu.aupload_method.TQDFMethodUSBSectorA.program.tool=tqdfcore_upload
+GenF4.menu.aupload_method.TQDFMethodUSBSectorA.erase.tool=tqdfcore_upload
+GenF4.menu.aupload_method.TQDFMethodUSBSectorA.bootloader.tool=tqdfcore_upload
+
+GenF4.menu.aupload_method.TQDFMethodUSBSectorB=TQDFCore Bootloader (USB > Sandbox)
+GenF4.menu.aupload_method.TQDFMethodUSBSectorB.build.flash_offset=0x20000
+GenF4.menu.aupload_method.TQDFMethodUSBSectorB.build.tqdftools_flag=-o=5
+GenF4.menu.aupload_method.TQDFMethodUSBSectorB.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
+GenF4.menu.aupload_method.TQDFMethodUSBSectorB.upload.protocol=hid
+GenF4.menu.aupload_method.TQDFMethodUSBSectorB.upload.tool=tqdfcore_upload
+GenF4.menu.aupload_method.TQDFMethodUSBSectorB.program.tool=tqdfcore_upload
+GenF4.menu.aupload_method.TQDFMethodUSBSectorB.erase.tool=tqdfcore_upload
+GenF4.menu.aupload_method.TQDFMethodUSBSectorB.bootloader.tool=tqdfcore_upload
 
 # Upload menu (TQDF Bootloader)
-GenF4.menu.aupload_method.TQDFMethodSTLink=TQDFCore Bootloader (SWD + Offset)
-GenF4.menu.aupload_method.TQDFMethodSTLink.build.flash_offset=0x8000
+GenF4.menu.aupload_method.TQDFMethodSTLink=TQDFCore Bootloader (SWD)
+GenF4.menu.aupload_method.TQDFMethodSTLink.build.flash_offset={build.bootsector_offset}
 GenF4.menu.aupload_method.TQDFMethodSTLink.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
 
 GenF4.menu.aupload_method.TQDFMethodSTLink.upload.protocol=0
@@ -167,19 +177,6 @@ GenF4.menu.aupload_method.dfuMethod.erase.tool=stm32CubeProg
 GenF4.menu.aupload_method.dfuMethod.bootloader.protocol=2
 GenF4.menu.aupload_method.dfuMethod.bootloader.options=-g
 GenF4.menu.aupload_method.dfuMethod.bootloader.tool=stm32CubeProg
-
-
-################################################################################
-# Boot Sector
-
-# Boot Sector menu (Main Watch Program)
-GenF4.menu.bbootsector.sectorA=Main (for watch program, default boot application)[default]
-GenF4.menu.bbootsector.sectorA.build.bootsector_offset=0x8000
-
-# Boot Sector menu (Sandbox)
-GenF4.menu.bbootsector.sectorB=Sandbox (for experiments, keep the main watch program alive)
-GenF4.menu.bbootsector.sectorB.build.bootsector_offset=0x20000
-
 
 
 ################################################################################
