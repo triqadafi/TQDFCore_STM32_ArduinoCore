@@ -1,7 +1,7 @@
 {
   "type": "tool", 
   "name": "framework-tqdfcore-stm32-arduinocore", 
-  "version": "1.1.6", "spec": {
+  "version": "1.2.0", "spec": {
     "owner": "platformio", 
     "id": null, 
     "name": "framework-tqdfcore-stm32-arduinocore", 
