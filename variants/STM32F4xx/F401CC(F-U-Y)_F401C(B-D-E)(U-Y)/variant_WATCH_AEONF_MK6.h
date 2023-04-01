@@ -187,11 +187,11 @@
 #define PLED7 PB10
 #define PLED8 PA7
 #define PLED9 PA6
-#define PLED10 PA5
-#define PLED11 PA4
+#define PLED10 PA4
+#define PLED11 PA3
 
 #define PBUTTON PA0
-#define PBEEPER PA15
+#define PBEEPER PA5
 #define PLED_POWER PB7
 
 
