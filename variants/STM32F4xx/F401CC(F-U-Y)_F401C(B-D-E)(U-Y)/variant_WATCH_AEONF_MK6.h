@@ -198,12 +198,12 @@
 #define PUNUSED1 PA15 // USE for calibration only
 #define PUNUSED2 PA1
 #define PUNUSED3 PA2
-#define PUNUSED4 PA3
+#define PUNUSED4 PA2 // placeholder
 #define PUNUSED5 PA8
 #define PUNUSED6 PB0
 #define PUNUSED7 PB1
 #define PUNUSED8 PB8
-#define PUNUSED9 PB8
+#define PUNUSED9 PB8 // placeholder
 #define PUNUSED10 PB13
 #define PUNUSED11 PB14
 #define PUNUSED12 PB15
