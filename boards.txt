@@ -2,7 +2,7 @@
 
 # menu.pnum=Board part number
 
-menu.aupload_method=Upload method
+menu.aupload_method=Upload Method and Sector
 menu.bdiwyor=------- [WARNING!] -------
 menu.cusb=UART Output
 menu.dopt=Optimize
@@ -84,7 +84,7 @@ GenF4.bootloader.file={build.series}/watch_{build.series}_tqdfcore_bootloader_en
 GenF4.bootloader.file_offset={build.series}/watch_{build.series}_tqdfcore_bootloader_enable_usb_cdc_offset.bin
 
 # Upload menu (TQDF Bootloader)
-GenF4.menu.aupload_method.TQDFMethodUSBSectorA=TQDFCore Bootloader (USB > Main Program) [default]
+GenF4.menu.aupload_method.TQDFMethodUSBSectorA=OS - [USB] TQDFCore Bootloader (Sector: Main) [default]
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.build.flash_offset=0x8000
 GenF4.menu.aupload_method.TQDFMethodUSBSectorB.build.tqdftools_flag=
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
@@ -94,7 +94,7 @@ GenF4.menu.aupload_method.TQDFMethodUSBSectorA.program.tool=tqdfcore_upload
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.erase.tool=tqdfcore_upload
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.bootloader.tool=tqdfcore_upload
 
-GenF4.menu.aupload_method.TQDFMethodUSBSectorB=TQDFCore Bootloader (USB > Sandbox)
+GenF4.menu.aupload_method.TQDFMethodUSBSectorB=OS - [USB] TQDFCore Bootloader (Sector: Sandbox)
 GenF4.menu.aupload_method.TQDFMethodUSBSectorB.build.flash_offset=0x20000
 GenF4.menu.aupload_method.TQDFMethodUSBSectorB.build.tqdftools_flag=-o=5
 GenF4.menu.aupload_method.TQDFMethodUSBSectorB.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
@@ -105,7 +105,7 @@ GenF4.menu.aupload_method.TQDFMethodUSBSectorB.erase.tool=tqdfcore_upload
 GenF4.menu.aupload_method.TQDFMethodUSBSectorB.bootloader.tool=tqdfcore_upload
 
 # Upload menu (TQDF Bootloader)
-GenF4.menu.aupload_method.TQDFMethodSTLink=TQDFCore Bootloader (SWD)
+GenF4.menu.aupload_method.TQDFMethodSTLink=OS - [ST-Link] TQDFCore Bootloader (Sector: Main)
 GenF4.menu.aupload_method.TQDFMethodSTLink.build.flash_offset={build.bootsector_offset}
 GenF4.menu.aupload_method.TQDFMethodSTLink.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
 
@@ -126,8 +126,25 @@ GenF4.menu.aupload_method.TQDFMethodSTLink.bootloader.options=-g
 GenF4.menu.aupload_method.TQDFMethodSTLink.bootloader.tool=tqdfcore_stlink
 
 # Upload menu
-GenF4.menu.aupload_method.swdMethod=STM32CubeProgrammer (SWD)
+GenF4.menu.aupload_method.dfuMethod=RECOVERY - [USB] STM32CubeProgrammer
+GenF4.menu.aupload_method.dfuMethod.upload.protocol=2
+GenF4.menu.aupload_method.dfuMethod.upload.options=-g
+GenF4.menu.aupload_method.dfuMethod.upload.tool=stm32CubeProg
 
+GenF4.menu.aupload_method.dfuMethod.program.protocol=2
+GenF4.menu.aupload_method.dfuMethod.program.options=-g
+GenF4.menu.aupload_method.dfuMethod.program.tool=stm32CubeProg
+
+GenF4.menu.aupload_method.dfuMethod.erase.protocol=2
+GenF4.menu.aupload_method.dfuMethod.erase.options=-g
+GenF4.menu.aupload_method.dfuMethod.erase.tool=stm32CubeProg
+
+GenF4.menu.aupload_method.dfuMethod.bootloader.protocol=2
+GenF4.menu.aupload_method.dfuMethod.bootloader.options=-g
+GenF4.menu.aupload_method.dfuMethod.bootloader.tool=stm32CubeProg
+
+
+GenF4.menu.aupload_method.swdMethod=RECOVERY - [ST-Link] STM32CubeProgrammer
 GenF4.menu.aupload_method.swdMethod.upload.protocol=0
 GenF4.menu.aupload_method.swdMethod.upload.options=-g
 GenF4.menu.aupload_method.swdMethod.upload.tool=stm32CubeProg
@@ -144,39 +161,22 @@ GenF4.menu.aupload_method.swdMethod.bootloader.protocol=0
 GenF4.menu.aupload_method.swdMethod.bootloader.options=-g
 GenF4.menu.aupload_method.swdMethod.bootloader.tool=stm32CubeProg
 
-GenF4.menu.aupload_method.serialMethod=STM32CubeProgrammer (Serial)
-GenF4.menu.aupload_method.serialMethod.upload.protocol=1
-GenF4.menu.aupload_method.serialMethod.upload.options={serial.port.file} -s
-GenF4.menu.aupload_method.serialMethod.upload.tool=stm32CubeProg
+# GenF4.menu.aupload_method.serialMethod=[UART] Recovery
+# GenF4.menu.aupload_method.serialMethod.upload.protocol=1
+# GenF4.menu.aupload_method.serialMethod.upload.options={serial.port.file} -s
+# GenF4.menu.aupload_method.serialMethod.upload.tool=stm32CubeProg
 
-GenF4.menu.aupload_method.serialMethod.program.protocol=1
-GenF4.menu.aupload_method.serialMethod.program.options={serial.port.file} -s
-GenF4.menu.aupload_method.serialMethod.program.tool=stm32CubeProg
+# GenF4.menu.aupload_method.serialMethod.program.protocol=1
+# GenF4.menu.aupload_method.serialMethod.program.options={serial.port.file} -s
+# GenF4.menu.aupload_method.serialMethod.program.tool=stm32CubeProg
 
-GenF4.menu.aupload_method.serialMethod.erase.protocol=1
-GenF4.menu.aupload_method.serialMethod.erase.options={serial.port.file} -s
-GenF4.menu.aupload_method.serialMethod.erase.tool=stm32CubeProg
+# GenF4.menu.aupload_method.serialMethod.erase.protocol=1
+# GenF4.menu.aupload_method.serialMethod.erase.options={serial.port.file} -s
+# GenF4.menu.aupload_method.serialMethod.erase.tool=stm32CubeProg
 
-GenF4.menu.aupload_method.serialMethod.bootloader.protocol=1
-GenF4.menu.aupload_method.serialMethod.bootloader.options={serial.port.file} -s
-GenF4.menu.aupload_method.serialMethod.bootloader.tool=stm32CubeProg
-
-GenF4.menu.aupload_method.dfuMethod=STM32CubeProgrammer (DFU)
-GenF4.menu.aupload_method.dfuMethod.upload.protocol=2
-GenF4.menu.aupload_method.dfuMethod.upload.options=-g
-GenF4.menu.aupload_method.dfuMethod.upload.tool=stm32CubeProg
-
-GenF4.menu.aupload_method.dfuMethod.program.protocol=2
-GenF4.menu.aupload_method.dfuMethod.program.options=-g
-GenF4.menu.aupload_method.dfuMethod.program.tool=stm32CubeProg
-
-GenF4.menu.aupload_method.dfuMethod.erase.protocol=2
-GenF4.menu.aupload_method.dfuMethod.erase.options=-g
-GenF4.menu.aupload_method.dfuMethod.erase.tool=stm32CubeProg
-
-GenF4.menu.aupload_method.dfuMethod.bootloader.protocol=2
-GenF4.menu.aupload_method.dfuMethod.bootloader.options=-g
-GenF4.menu.aupload_method.dfuMethod.bootloader.tool=stm32CubeProg
+# GenF4.menu.aupload_method.serialMethod.bootloader.protocol=1
+# GenF4.menu.aupload_method.serialMethod.bootloader.options={serial.port.file} -s
+# GenF4.menu.aupload_method.serialMethod.bootloader.tool=stm32CubeProg
 
 
 ################################################################################
