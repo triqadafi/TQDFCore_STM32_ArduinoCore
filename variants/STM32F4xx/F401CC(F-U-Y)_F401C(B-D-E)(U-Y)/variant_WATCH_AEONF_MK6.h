@@ -177,6 +177,7 @@
 
 #define TQDF_WATCH_AEONF_MK6
 
+#define PLED0 PC13
 #define PLED1 PB9
 #define PLED2 PB6
 #define PLED3 PB5
@@ -188,7 +189,6 @@
 #define PLED9 PA6
 #define PLED10 PA5
 #define PLED11 PA4
-#define PLED12 PC13
 
 #define PBUTTON PA0
 #define PBEEPER PA15
