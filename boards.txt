@@ -106,7 +106,7 @@ GenF4.menu.aupload_method.TQDFMethodUSBSectorB.bootloader.tool=tqdfcore_upload
 
 # Upload menu (TQDF Bootloader)
 GenF4.menu.aupload_method.TQDFMethodSTLink=OS - [ST-Link] TQDFCore Bootloader (Sector: Main)
-GenF4.menu.aupload_method.TQDFMethodSTLink.build.flash_offset={build.bootsector_offset}
+GenF4.menu.aupload_method.TQDFMethodSTLink.build.flash_offset=0x8000
 GenF4.menu.aupload_method.TQDFMethodSTLink.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
 
 GenF4.menu.aupload_method.TQDFMethodSTLink.upload.protocol=0
