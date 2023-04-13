@@ -1,6 +1,6 @@
 {
   "name": "framework-tqdfcore-stm32-arduinocore",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "TQDFCore is Arduino Wiring-based Framework for TQDF Watch.",
   "url": "https://github.com/triqadafi/TQDFCore_STM32_Arduino_Core"
 }
