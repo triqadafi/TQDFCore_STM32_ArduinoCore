@@ -55,6 +55,7 @@ build.extra_flags=
 build.bootloader_flags=
 build.ldscript=ldscript.ld
 build.variant_h=variant_generic.h
+build.tqdftools_flag=
 
 # These can be overridden in platform.local.txt
 compiler.c.st_extra_flags={build.peripheral_pins}
@@ -108,7 +109,6 @@ build.flags.optimize=-Os
 build.flags.debug=-DNDEBUG
 build.flags.ldspecs=--specs=nano.specs
 build.flash_offset=0
-build.tqdftools_flag=
 
 # Pre and post build hooks
 build.opt.name=build.opt

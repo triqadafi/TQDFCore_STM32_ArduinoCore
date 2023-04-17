@@ -86,7 +86,7 @@ GenF4.bootloader.file_offset={build.series}/watch_{build.series}_tqdfcore_bootlo
 # Upload menu (TQDF Bootloader)
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA=OS - [USB] TQDFCore Bootloader (Sector: Main) [default]
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.build.flash_offset=0x8000
-GenF4.menu.aupload_method.TQDFMethodUSBSectorB.build.tqdftools_flag=
+GenF4.menu.aupload_method.TQDFMethodUSBSectorA.build.tqdftools_flag=
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.upload.protocol=hid
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.upload.tool=tqdfcore_upload
