@@ -7,6 +7,7 @@ menu.bdiwyor=------- [WARNING!] -------
 menu.cusb=UART Output
 menu.dopt=Optimize
 menu.ertlib=C Runtime Library
+menu.fbandwidth=Bandwidth
 
 # menu.xserial=U(S)ART support
 # menu.xusb=USB speed (if available)
@@ -259,3 +260,13 @@ GenF4.menu.ertlib.nanofps=Newlib Nano + Float Printf/Scanf
 GenF4.menu.ertlib.nanofps.build.flags.ldspecs=--specs=nano.specs -u _printf_float -u _scanf_float
 GenF4.menu.ertlib.full=Newlib Standard
 GenF4.menu.ertlib.full.build.flags.ldspecs=
+
+# Bandwidth
+GenF4.menu.fbandwidth.bandwidth8=8 bytes [default]
+GenF4.menu.fbandwidth.bandwidth8.build.tqdftools_bandwidth=-b=8
+GenF4.menu.fbandwidth.bandwidth16=16 bytes [default]
+GenF4.menu.fbandwidth.bandwidth16.build.tqdftools_bandwidth=-b=16
+GenF4.menu.fbandwidth.bandwidth32=32 bytes [default]
+GenF4.menu.fbandwidth.bandwidth32.build.tqdftools_bandwidth=-b=32
+GenF4.menu.fbandwidth.bandwidth64=64 bytes [default]
+GenF4.menu.fbandwidth.bandwidth64.build.tqdftools_bandwidth=-b=64
