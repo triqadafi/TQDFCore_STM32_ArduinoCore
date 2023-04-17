@@ -5,7 +5,7 @@
 # https://arduino.github.io/arduino-cli/latest/platform-specification/
 
 name=TQDFCore_STM32_ArduinoCore
-version=1.2.2
+version=1.2.3
 
 # STM compile variables
 # ----------------------
