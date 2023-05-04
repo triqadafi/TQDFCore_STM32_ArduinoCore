@@ -168,23 +168,23 @@ GenF4.menu.aupload_method.dfuMethod.bootloader.tool=stm32CubeProg
 # GenF4.menu.aupload_method.swdMethod.bootloader.options=-g
 # GenF4.menu.aupload_method.swdMethod.bootloader.tool=stm32CubeProg
 
-GenF4.menu.aupload_method.TQDFCLICalibrate=Auto-Calibrate Date and Time
-GenF4.menu.aupload_method.TQDFCLICalibrate.build.tqdfcli_flag=calibrate
-GenF4.menu.aupload_method.TQDFCLICalibrate.upload.protocol=
-GenF4.menu.aupload_method.TQDFCLICalibrate.upload.options=
-GenF4.menu.aupload_method.TQDFCLICalibrate.upload.tool=tqdfcore_watch_cli
+GenF4.menu.aupload_method.TQDFCLISyncronize=Syncronize Date and Time
+GenF4.menu.aupload_method.TQDFCLISyncronize.build.tqdfcli_flag=syncronize
+GenF4.menu.aupload_method.TQDFCLISyncronize.upload.protocol=
+GenF4.menu.aupload_method.TQDFCLISyncronize.upload.options=
+GenF4.menu.aupload_method.TQDFCLISyncronize.upload.tool=tqdfcore_watch_cli
 
-GenF4.menu.aupload_method.TQDFCLICalibrate.program.protocol=
-GenF4.menu.aupload_method.TQDFCLICalibrate.program.options=
-GenF4.menu.aupload_method.TQDFCLICalibrate.program.tool=tqdfcore_watch_cli
+GenF4.menu.aupload_method.TQDFCLISyncronize.program.protocol=
+GenF4.menu.aupload_method.TQDFCLISyncronize.program.options=
+GenF4.menu.aupload_method.TQDFCLISyncronize.program.tool=tqdfcore_watch_cli
 
-GenF4.menu.aupload_method.TQDFCLICalibrate.erase.protocol=
-GenF4.menu.aupload_method.TQDFCLICalibrate.erase.options=
-GenF4.menu.aupload_method.TQDFCLICalibrate.erase.tool=tqdfcore_watch_cli
+GenF4.menu.aupload_method.TQDFCLISyncronize.erase.protocol=
+GenF4.menu.aupload_method.TQDFCLISyncronize.erase.options=
+GenF4.menu.aupload_method.TQDFCLISyncronize.erase.tool=tqdfcore_watch_cli
 
-GenF4.menu.aupload_method.TQDFCLICalibrate.bootloader.protocol=calibrate
-GenF4.menu.aupload_method.TQDFCLICalibrate.bootloader.options=-datetime
-GenF4.menu.aupload_method.TQDFCLICalibrate.bootloader.tool=tqdfcore_watch_cli
+GenF4.menu.aupload_method.TQDFCLISyncronize.bootloader.protocol=calibrate
+GenF4.menu.aupload_method.TQDFCLISyncronize.bootloader.options=-datetime
+GenF4.menu.aupload_method.TQDFCLISyncronize.bootloader.tool=tqdfcore_watch_cli
 
 # GenF4.menu.aupload_method.serialMethod=[UART] Recovery
 # GenF4.menu.aupload_method.serialMethod.upload.protocol=1
