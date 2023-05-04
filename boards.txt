@@ -2,7 +2,7 @@
 
 # menu.pnum=Board part number
 
-menu.aupload_method=Upload Method and Sector
+menu.aupload_method=Action
 menu.bdiwyor=------- [WARNING!] -------
 menu.cusb=UART Output
 menu.dopt=Optimize
@@ -85,8 +85,10 @@ GenF4.bootloader.file={build.series}/watch_{build.series}_tqdfcore_bootloader_en
 GenF4.bootloader.file_offset={build.series}/watch_{build.series}_tqdfcore_bootloader_enable_usb_cdc_offset.bin
 
 # Upload menu (TQDF Bootloader)
-GenF4.menu.aupload_method.TQDFMethodUSBSectorA=OS - [USB] TQDFCore Bootloader (Sector: Main) [default]
+#GenF4.menu.aupload_method.TQDFMethodUSBSectorA=OS - [USB] TQDFCore Bootloader (Sector: Main) [default]
+GenF4.menu.aupload_method.TQDFMethodUSBSectorA=Upload to MAIN sector [default]
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.build.flash_offset=0x8000
+GenF4.menu.aupload_method.TQDFMethodUSBSectorA.build.tqdfcli_flag=upload
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.build.tqdftools_flag=
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.upload.protocol=hid
@@ -95,8 +97,10 @@ GenF4.menu.aupload_method.TQDFMethodUSBSectorA.program.tool=tqdfcore_upload
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.erase.tool=tqdfcore_upload
 GenF4.menu.aupload_method.TQDFMethodUSBSectorA.bootloader.tool=tqdfcore_upload
 
-GenF4.menu.aupload_method.TQDFMethodUSBSectorB=OS - [USB] TQDFCore Bootloader (Sector: Sandbox)
+#GenF4.menu.aupload_method.TQDFMethodUSBSectorB=OS - [USB] TQDFCore Bootloader (Sector: Sandbox)
+GenF4.menu.aupload_method.TQDFMethodUSBSectorB=Upload to SANDBOX sector
 GenF4.menu.aupload_method.TQDFMethodUSBSectorB.build.flash_offset=0x20000
+GenF4.menu.aupload_method.TQDFMethodUSBSectorB.build.tqdfcli_flag=upload
 GenF4.menu.aupload_method.TQDFMethodUSBSectorB.build.tqdftools_flag=-o=5
 GenF4.menu.aupload_method.TQDFMethodUSBSectorB.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
 GenF4.menu.aupload_method.TQDFMethodUSBSectorB.upload.protocol=hid
@@ -106,28 +110,30 @@ GenF4.menu.aupload_method.TQDFMethodUSBSectorB.erase.tool=tqdfcore_upload
 GenF4.menu.aupload_method.TQDFMethodUSBSectorB.bootloader.tool=tqdfcore_upload
 
 # Upload menu (TQDF Bootloader)
-GenF4.menu.aupload_method.TQDFMethodSTLink=OS - [ST-Link] TQDFCore Bootloader (Sector: Main)
-GenF4.menu.aupload_method.TQDFMethodSTLink.build.flash_offset=0x8000
-GenF4.menu.aupload_method.TQDFMethodSTLink.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
+# GenF4.menu.aupload_method.TQDFMethodSTLink=OS - [ST-Link] TQDFCore Bootloader (Sector: Main)
+# GenF4.menu.aupload_method.TQDFMethodSTLink.build.flash_offset=0x8000
+# GenF4.menu.aupload_method.TQDFMethodSTLink.build.bootloader_flags=-DBL_HID -DVECT_TAB_OFFSET={build.flash_offset}
 
-GenF4.menu.aupload_method.TQDFMethodSTLink.upload.protocol=0
-GenF4.menu.aupload_method.TQDFMethodSTLink.upload.options=-g
-GenF4.menu.aupload_method.TQDFMethodSTLink.upload.tool=tqdfcore_stlink
+# GenF4.menu.aupload_method.TQDFMethodSTLink.upload.protocol=0
+# GenF4.menu.aupload_method.TQDFMethodSTLink.upload.options=-g
+# GenF4.menu.aupload_method.TQDFMethodSTLink.upload.tool=tqdfcore_stlink
 
-GenF4.menu.aupload_method.TQDFMethodSTLink.program.protocol=0
-GenF4.menu.aupload_method.TQDFMethodSTLink.program.options=-g
-GenF4.menu.aupload_method.TQDFMethodSTLink.program.tool=tqdfcore_stlink
+# GenF4.menu.aupload_method.TQDFMethodSTLink.program.protocol=0
+# GenF4.menu.aupload_method.TQDFMethodSTLink.program.options=-g
+# GenF4.menu.aupload_method.TQDFMethodSTLink.program.tool=tqdfcore_stlink
 
-GenF4.menu.aupload_method.TQDFMethodSTLink.erase.protocol=0
-GenF4.menu.aupload_method.TQDFMethodSTLink.erase.options=-g
-GenF4.menu.aupload_method.TQDFMethodSTLink.erase.tool=tqdfcore_stlink
+# GenF4.menu.aupload_method.TQDFMethodSTLink.erase.protocol=0
+# GenF4.menu.aupload_method.TQDFMethodSTLink.erase.options=-g
+# GenF4.menu.aupload_method.TQDFMethodSTLink.erase.tool=tqdfcore_stlink
 
-GenF4.menu.aupload_method.TQDFMethodSTLink.bootloader.protocol=0
-GenF4.menu.aupload_method.TQDFMethodSTLink.bootloader.options=-g
-GenF4.menu.aupload_method.TQDFMethodSTLink.bootloader.tool=tqdfcore_stlink
+# GenF4.menu.aupload_method.TQDFMethodSTLink.bootloader.protocol=0
+# GenF4.menu.aupload_method.TQDFMethodSTLink.bootloader.options=-g
+# GenF4.menu.aupload_method.TQDFMethodSTLink.bootloader.tool=tqdfcore_stlink
 
 # Upload menu
-GenF4.menu.aupload_method.dfuMethod=RECOVERY - [USB] STM32CubeProgrammer
+# GenF4.menu.aupload_method.dfuMethod=RECOVERY - [USB] STM32CubeProgrammer
+GenF4.menu.aupload_method.dfuMethod=Bootloader Update/Fix
+GenF4.menu.aupload_method.dfuMethod.build.tqdfcli_flag=boot
 GenF4.menu.aupload_method.dfuMethod.upload.protocol=2
 GenF4.menu.aupload_method.dfuMethod.upload.options=-g
 GenF4.menu.aupload_method.dfuMethod.upload.tool=stm32CubeProg
@@ -145,6 +151,22 @@ GenF4.menu.aupload_method.dfuMethod.bootloader.options=-g
 GenF4.menu.aupload_method.dfuMethod.bootloader.tool=stm32CubeProg
 
 
+# GenF4.menu.aupload_method.swdMethod=RECOVERY - [ST-Link] STM32CubeProgrammer
+# GenF4.menu.aupload_method.swdMethod.upload.protocol=0
+# GenF4.menu.aupload_method.swdMethod.upload.options=-g
+# GenF4.menu.aupload_method.swdMethod.upload.tool=stm32CubeProg
+
+# GenF4.menu.aupload_method.swdMethod.program.protocol=0
+# GenF4.menu.aupload_method.swdMethod.program.options=-g
+# GenF4.menu.aupload_method.swdMethod.program.tool=stm32CubeProg
+
+# GenF4.menu.aupload_method.swdMethod.erase.protocol=0
+# GenF4.menu.aupload_method.swdMethod.erase.options=-g
+# GenF4.menu.aupload_method.swdMethod.erase.tool=stm32CubeProg
+
+# GenF4.menu.aupload_method.swdMethod.bootloader.protocol=0
+# GenF4.menu.aupload_method.swdMethod.bootloader.options=-g
+# GenF4.menu.aupload_method.swdMethod.bootloader.tool=stm32CubeProg
 GenF4.menu.aupload_method.swdMethod=RECOVERY - [ST-Link] STM32CubeProgrammer
 GenF4.menu.aupload_method.swdMethod.upload.protocol=0
 GenF4.menu.aupload_method.swdMethod.upload.options=-g
