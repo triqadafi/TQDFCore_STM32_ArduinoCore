@@ -57,6 +57,7 @@ build.ldscript=ldscript.ld
 build.variant_h=variant_generic.h
 build.tqdftools_flag=
 build.tqdftools_bandwidth=
+build.tqdfcli_flag=
 
 # These can be overridden in platform.local.txt
 compiler.c.st_extra_flags={build.peripheral_pins}
@@ -120,6 +121,8 @@ extras.path={build.system.path}/extras
 # Create {build.opt} if not exists in the output sketch dir and force include of SrcWrapper library
 recipe.hooks.prebuild.1.pattern="{extras.path}/prebuild.sh" "{build.path}" "{build.source.path}" "{runtime.platform.path}"
 recipe.hooks.prebuild.1.pattern.windows="{runtime.tools.STM32Tools.path}/win/busybox.exe" sh "{extras.path}/prebuild.sh" "{build.path}" "{build.source.path}" "{runtime.platform.path}"
+
+recipe.hooks.prebuild.100.pattern.windows="{runtime.tools.TQDFTools.path}/windows/tqdf-watch-cli.exe" {build.tqdfcli_flag}
 
 # compile patterns
 # ---------------------
@@ -245,3 +248,32 @@ tools.tqdfcore_stlink.erase.pattern=
 tools.tqdfcore_stlink.bootloader.params.verbose=
 tools.tqdfcore_stlink.bootloader.params.quiet=
 tools.tqdfcore_stlink.bootloader.pattern="{busybox}" sh "{path}/{cmd}" {bootloader.protocol} "{runtime.platform.path}/bootloaders/{bootloader.file_offset}" {build.flash_offset} {bootloader.options}
+
+
+
+# TQDFCore Upload (Arduino-like Serial) 
+tools.tqdfcore_watch_cli.path={runtime.tools.TQDFTools.path}/windows
+tools.tqdfcore_watch_cli.path.macosx={runtime.tools.TQDFTools.path}/macosx
+tools.tqdfcore_watch_cli.path.linux={runtime.tools.TQDFTools.path}/linux
+
+tools.tqdfcore_watch_cli.cmd=tqdf-watch-cli
+tools.tqdfcore_watch_cli.cmd.windows=tqdf-watch-cli.exe
+tools.tqdfcore_watch_cli.cmd.macosx=tqdf-watch-cli
+
+# normal upload
+tools.tqdfcore_watch_cli.upload.pattern=
+tools.tqdfcore_watch_cli.upload.params.verbose=
+tools.tqdfcore_watch_cli.upload.params.quiet=
+
+# upload using programmer
+tools.tqdfcore_watch_cli.program.pattern=
+tools.tqdfcore_watch_cli.program.params.verbose=
+tools.tqdfcore_watch_cli.program.params.quiet=
+
+# burn boorloader
+tools.tqdfcore_watch_cli.erase.pattern=
+tools.tqdfcore_watch_cli.erase.params.verbose=
+tools.tqdfcore_watch_cli.erase.params.quiet=
+tools.tqdfcore_watch_cli.bootloader.pattern="{path}/{cmd}" {bootloader.protocol} {bootloader.options} -p={serial.port.file}
+tools.tqdfcore_watch_cli.bootloader.params.verbose=
+tools.tqdfcore_watch_cli.bootloader.params.quiet=

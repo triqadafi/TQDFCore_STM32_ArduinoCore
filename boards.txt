@@ -167,22 +167,24 @@ GenF4.menu.aupload_method.dfuMethod.bootloader.tool=stm32CubeProg
 # GenF4.menu.aupload_method.swdMethod.bootloader.protocol=0
 # GenF4.menu.aupload_method.swdMethod.bootloader.options=-g
 # GenF4.menu.aupload_method.swdMethod.bootloader.tool=stm32CubeProg
-GenF4.menu.aupload_method.swdMethod=RECOVERY - [ST-Link] STM32CubeProgrammer
-GenF4.menu.aupload_method.swdMethod.upload.protocol=0
-GenF4.menu.aupload_method.swdMethod.upload.options=-g
-GenF4.menu.aupload_method.swdMethod.upload.tool=stm32CubeProg
 
-GenF4.menu.aupload_method.swdMethod.program.protocol=0
-GenF4.menu.aupload_method.swdMethod.program.options=-g
-GenF4.menu.aupload_method.swdMethod.program.tool=stm32CubeProg
+GenF4.menu.aupload_method.TQDFCLICalibrate=Auto-Calibrate Date and Time
+GenF4.menu.aupload_method.TQDFCLICalibrate.build.tqdfcli_flag=calibrate
+GenF4.menu.aupload_method.TQDFCLICalibrate.upload.protocol=
+GenF4.menu.aupload_method.TQDFCLICalibrate.upload.options=
+GenF4.menu.aupload_method.TQDFCLICalibrate.upload.tool=tqdfcore_watch_cli
 
-GenF4.menu.aupload_method.swdMethod.erase.protocol=0
-GenF4.menu.aupload_method.swdMethod.erase.options=-g
-GenF4.menu.aupload_method.swdMethod.erase.tool=stm32CubeProg
+GenF4.menu.aupload_method.TQDFCLICalibrate.program.protocol=
+GenF4.menu.aupload_method.TQDFCLICalibrate.program.options=
+GenF4.menu.aupload_method.TQDFCLICalibrate.program.tool=tqdfcore_watch_cli
 
-GenF4.menu.aupload_method.swdMethod.bootloader.protocol=0
-GenF4.menu.aupload_method.swdMethod.bootloader.options=-g
-GenF4.menu.aupload_method.swdMethod.bootloader.tool=stm32CubeProg
+GenF4.menu.aupload_method.TQDFCLICalibrate.erase.protocol=
+GenF4.menu.aupload_method.TQDFCLICalibrate.erase.options=
+GenF4.menu.aupload_method.TQDFCLICalibrate.erase.tool=tqdfcore_watch_cli
+
+GenF4.menu.aupload_method.TQDFCLICalibrate.bootloader.protocol=calibrate
+GenF4.menu.aupload_method.TQDFCLICalibrate.bootloader.options=-datetime
+GenF4.menu.aupload_method.TQDFCLICalibrate.bootloader.tool=tqdfcore_watch_cli
 
 # GenF4.menu.aupload_method.serialMethod=[UART] Recovery
 # GenF4.menu.aupload_method.serialMethod.upload.protocol=1
