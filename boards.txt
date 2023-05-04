@@ -288,9 +288,9 @@ GenF4.menu.ertlib.full.build.flags.ldspecs=
 # Bandwidth
 GenF4.menu.fbandwidth.bandwidth8=8 bytes [default]
 GenF4.menu.fbandwidth.bandwidth8.build.tqdftools_bandwidth=-b=8
-GenF4.menu.fbandwidth.bandwidth16=16 bytes [default]
+GenF4.menu.fbandwidth.bandwidth16=16 bytes
 GenF4.menu.fbandwidth.bandwidth16.build.tqdftools_bandwidth=-b=16
-GenF4.menu.fbandwidth.bandwidth32=32 bytes [default]
+GenF4.menu.fbandwidth.bandwidth32=32 bytes
 GenF4.menu.fbandwidth.bandwidth32.build.tqdftools_bandwidth=-b=32
-GenF4.menu.fbandwidth.bandwidth64=64 bytes [default]
+GenF4.menu.fbandwidth.bandwidth64=64 bytes
 GenF4.menu.fbandwidth.bandwidth64.build.tqdftools_bandwidth=-b=64
